@@ -6,7 +6,7 @@ author = "Mateusz Okulanis"
 
 ## Professional Background
 
-Hey everyone! I'm Mateusz, hailing from the beautiful country, Poland. My professional journey revolves around the fascinating world of embedded systems and low-level programming. I specialize in **FPGA programming**, diving deep into **kernel development**, and crafting robust systems with **Yocto** and **Buildroot**. On top of that, I'm proficient in **Bash scripting** and enjoy leveraging **Docker** for efficient development workflows, all while using **Python** for various tasks. I also have extensive experience in the field of cybersecurity. I
+Hey everyone! I'm Mateusz, hailing from the beautiful country, Poland. My professional journey revolves around the fascinating world of embedded systems and low-level programming. I specialize in **FPGA programming**, diving deep into **kernel development**, and crafting robust systems with **Yocto** and **Buildroot**. On top of that, I'm proficient in **Bash scripting** and enjoy leveraging **Docker** for efficient development workflows, all while using **Python** for various tasks. I also have extensive experience in the field of cybersecurity. I use arch, btw.
 
 ## Contact
 
