@@ -54,3 +54,12 @@ ZSH mtsh theme
 ***
 ***
 ***
+
+Commodore 64 Hugo Theme Restyle
+
+[ <<< GitHub >>> ](https://github.com/FPGArtktic/commodore64-vice-city-hugo-theme-terminal)
+
+***
+***
+***
+***
