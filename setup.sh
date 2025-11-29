@@ -1,1 +1,1 @@
-git clone https://github.com/FPGArtktic/fiolet-hugo-theme-terminal themes/terminal
+git clone git@github.com:FPGArtktic/commodore64-vice-city-hugo-theme-terminal.git themes/terminal

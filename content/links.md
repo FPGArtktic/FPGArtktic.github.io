@@ -23,8 +23,11 @@ Here, I'm curating a collection of groovy books, mind-bending articles, awesome 
 * [Richard Stallman's Website](https://www.stallman.org/) - Personal website of the founder of the GNU Project and Free Software Foundation.
 * [Explain Shell](https://explainshell.com/) - Interactive tool that explains shell commands.
 * [CRON Guru](https://crontab.guru/) - Quick and simple editor for cron schedule expressions.
-
-
+* [Arch Wiki](wiki.archlinux.org) - Learning Materials.
+* [Debian Wiki](https://wiki.debian.org/) - My first Linux Distro .
+* [Linux Profesional Institute Learning Materials](https://learning.lpi.org/en/learning-materials/learning-materials/) - I started from here
+* [Linux Journey](https://linuxjourney.com/) - A fun and interactive way to learn Linux basics and concepts.
+* [Kernel dive in](https://elixir.bootlin.com/linux/v6.17.9/source/Documentation) - :)
 ***
 ***
 ***
@@ -38,3 +41,6 @@ Here, I'm curating a collection of groovy books, mind-bending articles, awesome 
 ***
 ***
 ***
+
+## Intresting links
+* [Early Bible](https://earlybible.com/) - I learned about this from a Deacon in the Orthodox Church, the oldest copies of the New Testament

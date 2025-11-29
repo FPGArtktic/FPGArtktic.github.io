@@ -43,3 +43,14 @@ Github Copilot Export JSON to Markdown Converter – Obsidian plugin and Python 
 ***
 ***
 ***
+
+ZSH mtsh theme
+
+[ <<< GitHub >>> ](https://github.com/FPGArtktic/ohmyzsh-mtsh-theme)
+
+[ <<< READ MORE >>>](/projects/copilot-to-md.md)
+
+***
+***
+***
+***
