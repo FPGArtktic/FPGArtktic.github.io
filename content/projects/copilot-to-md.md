@@ -3,25 +3,33 @@ title: "Github Copilot Export JSON to Markdown Converter "
 date: 2025-06-02
 ---
 
-Github Copilot Export JSON to Markdown Converter is a toolset for converting JSON files (such as those exported from Copilot) into clean, readable Markdown documents. The project includes both a standalone Python script and a dedicated Obsidian plugin, making it easy to integrate into different workflows.
+A converter from GitHub Copilot JSON exports to Markdown. It ships as a Python
+script and as an Obsidian plugin, because the conversion is useful both in a
+pipeline and inside the vault where the notes end up.
 
-## Key Features
-- **JSON to Markdown Conversion:** Converts JSON files in a specified input directory to Markdown files in an output directory.
-- **Automatic Directory Handling:** Creates output directories if they do not exist.
-- **Flexible Formatting:** Extracts and formats relevant fields, preserving code blocks and structure.
-- **Obsidian Plugin:** Seamless integration with Obsidian, allowing conversion with a single click or command palette action.
-- **Customizable:** Input/output folders and formatting can be configured or modified.
-- **Cross-Platform:** Works as a Python script or as a plugin within Obsidian.
+## What it does
+
+- Converts every JSON file in an input directory to Markdown in an output
+  directory.
+- Creates the output directory if it is missing.
+- Extracts the fields that carry the conversation and keeps code blocks
+  intact.
+- Runs inside Obsidian from a ribbon icon or the command palette.
+- Takes input and output folders from configuration.
+- Runs anywhere Python does, and anywhere Obsidian does.
 
 ## Usage
-- For the Python script: Place JSON files in the `jsons/` directory and run `python3 json_to_md.py`. Output will be saved in `markdowns/`.
-- For the Obsidian plugin: Copy the plugin folder to your vault, enable it, and use the ribbon icon or command palette to convert files.
 
-## Example
-- Input: JSON file with Copilot conversation data
-- Output: Markdown file with formatted requests, responses, and code blocks
+Python: put the JSON files in `jsons/` and run `python3 json_to_md.py`. The
+Markdown lands in `markdowns/`.
 
-## License
-This project is licensed under the GNU GPL v3.0 license.
+Obsidian: copy the plugin folder into the vault, enable it, and convert from
+the ribbon icon or the command palette.
 
-For more details, visit the [Github Copilot Export JSON to Markdown Converter repository](https://github.com/FPGArtktic/copilot-export-json-to-markdown).
+Input is a JSON file of Copilot conversation data; output is a Markdown file
+with the requests, the responses and the code blocks.
+
+## Licence
+
+GNU GPL v3.0. Source:
+[copilot-export-json-to-markdown](https://github.com/FPGArtktic/copilot-export-json-to-markdown).

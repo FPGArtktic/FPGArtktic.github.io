@@ -1,58 +1,75 @@
 ---
-title: "MTSH - Advanced Zsh Theme for DevOps + Programmer"
+title: "mtsh - a zsh prompt for multi-user and multi-repository work"
 date: 2025-11-29
 ---
 
+mtsh is an Oh My Zsh theme. It reports the state you would otherwise have to
+ask for — the clock, the machine, where you are, and what git thinks of it —
+and it draws one frame per command without making you wait for it.
 
-A beautiful and feature-rich Zsh theme that provides comprehensive system and Git information in an elegant frame. Perfect for developers who want to stay informed about their environment at a glance.
+It exists because switching between repositories on several machines means
+losing track of three things at once: whether the working tree is clean,
+whether it is in step with the remote, and what the machine is doing. Running
+`git status`, `git fetch` and `free -h` by hand to find out is slower than
+printing the answers.
 
-## ✨ Features
+## What the prompt reports
 
-### 📊 System Information
-- **Date and time:** Current date and time display
-- **IP Address:** Your current IPv4 address
-- **CPU Usage:** Real-time processor utilization percentage
-- **RAM Usage:** Memory consumption (used/total)
-- **Logged Users:** Number of unique users currently logged in
-- **Command Timing:** Execution time for the last command
+### The machine
 
-### 🔧 Git Integration
-- **Branch Information:** Current branch name and commit hash
-- **Working Directory Status:** Clean/Dirty state with color coding
-- **Sync Status:** Behind/ahead status with remote repository
-- **Smart Fetch Detection:** Indicates when remote info might be outdated (⚡)
-- **Fetch Needed Indicator:** Shows ⚡ when local remote refs are older than 2 minutes
+| Field | Meaning |
+|---|---|
+| Date and time | Local clock at the moment the prompt was drawn |
+| IP address | Current IPv4 address |
+| CPU usage | Processor utilisation, from a `top` snapshot |
+| RAM usage | Used against total |
+| Logged users | Number of distinct users on the machine |
+| Command timing | Wall-clock duration of the previous command |
 
-### 🎯 Smart Features
-- **Path Shortening:** Long paths are intelligently abbreviated
-- **Dark Theme Optimized:** Colors designed for dark backgrounds
-- **70-Character Frame:** Clean, consistent visual layout
-- **Real-time Updates:** Information updates with each command
-- **Instant CPU Monitoring:** Fast CPU usage detection using top snapshots
-- **Multi-user Awareness:** Shows logged users count for server environments
-- **Performance Optimized:** Non-blocking system information gathering
+The CPU and memory reads are non-blocking. A prompt that stalls is worse than
+a prompt that tells you less.
 
-## 💡 Why I Created This Theme
+### Git
 
-As a DevOps engineer and low-level programmer working with multiple repositories across different machines as an administrator, I needed a theme that gives me instant visibility into:
+| Field | Meaning |
+|---|---|
+| Branch | Current branch name and short commit hash |
+| Working tree | Clean or dirty, colour-coded |
+| Sync | Commits ahead of and behind the remote |
+| Staleness | Marks the remote refs as old when they are over two minutes out of date |
 
-- System status (RAM, IP, timing) for server management
-- Git synchronization across multiple repos without constant git fetch
-- Clean visual layout that works in various terminal environments
-- Performance - no slow operations that delay the prompt
+The staleness marker is the point of the git section. `git status` reports
+ahead/behind against whatever the last `git fetch` left behind, which on a
+machine you have not pulled on today is a lie. The prompt says so rather than
+repeating it.
 
-This theme was born from daily frustration of switching between repos and losing track of sync status, system resources, and execution times. It's designed for developers and sysadmins who juggle multiple projects simultaneously.
+### Layout
 
-Built in the spirit of GNU - free software that empowers users. If you have suggestions or improvements, please share them with the community!
+Paths are abbreviated when they get long. The frame is 70 characters, so the
+line wraps the same way on every terminal it is likely to meet. Colours assume
+a dark background.
 
-## 🚀 Installation
+## Status indicators
 
-### Prerequisites
-- Zsh (5.0+)
+| Symbol | Meaning |
+|---|---|
+| CLEAN | No uncommitted changes |
+| DIRTY | Uncommitted changes present |
+| ✔ synced | Up to date with the remote |
+| ⇡3 ahead | Three commits ahead of the remote |
+| ⇣2 behind | Two commits behind the remote |
+| ⇣1 ⇡2 | Diverged: behind and ahead at once |
+| ⚠ no remote | No remote branch configured |
+| ⚡ | Remote refs older than two minutes; ahead/behind may be wrong |
+
+## Requirements
+
+- zsh 5.0 or newer
 - Oh My Zsh
-- Powerline Fonts (required for proper display of symbols)
+- A Powerline font, for the frame and the symbols above
 
-#### Install Powerline Fonts
+Installing a Powerline font:
+
 ```sh
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -61,7 +78,8 @@ cd ..
 rm -rf fonts
 ```
 
-### Quick Install
+## Installation
+
 ```sh
 git clone https://github.com/FPGArtktic/ohmyzsh-mtsh-theme.git
 cp ohmyzsh-mtsh-theme/mtsh.zsh-theme ~/.oh-my-zsh/custom/themes/
@@ -69,92 +87,48 @@ sed -i 's/ZSH_THEME=".*"/ZSH_THEME="mtsh"/' ~/.zshrc
 source ~/.zshrc
 ```
 
-### Manual Installation
-- Download `mtsh.zsh-theme`
-- Copy it to `~/.oh-my-zsh/custom/themes/`
-- Edit `~/.zshrc` and set: `ZSH_THEME="mtsh"`
-- Restart your terminal or run `source ~/.zshrc`
+By hand, if you would rather see what changes: copy `mtsh.zsh-theme` into
+`~/.oh-my-zsh/custom/themes/`, set `ZSH_THEME="mtsh"` in `~/.zshrc`, and start
+a new shell.
 
-## 🎨 Color Scheme
+## Colours
 
-The theme uses a carefully selected 256-color palette optimized for dark backgrounds:
+256-colour palette, chosen for dark backgrounds.
 
-| Element         | Color (Code)   | Description                       |
-|-----------------|---------------|-----------------------------------|
-| Date/Time       | Bright Blue (117)   | Easy to read timestamp           |
-| Directory       | Bright Yellow (228) | Current working directory        |
-| Git Branch      | Bright Magenta (213)| Git branch name                  |
-| Git Clean       | Bright Green (121)  | Clean repository state           |
-| Git Dirty       | Bright Red (210)    | Modified files indicator         |
-| Git Behind      | Red (210)           | Behind remote commits            |
-| Git Ahead       | Green (121)         | Ahead of remote commits          |
-| IP Address      | Bright Magenta (213)| Network information              |
-| CPU Usage       | Bright Cyan (159)   | Processor utilization            |
-| RAM Usage       | Bright Green (121)  | System memory                    |
-| Users Count     | Orange (208)        | Logged users indicator           |
+| Element | Colour |
+|---|---|
+| Date and time | Bright blue (117) |
+| Directory | Bright yellow (228) |
+| Git branch | Bright magenta (213) |
+| Git clean | Bright green (121) |
+| Git dirty | Bright red (210) |
+| Git behind | Red (210) |
+| Git ahead | Green (121) |
+| IP address | Bright magenta (213) |
+| CPU usage | Bright cyan (159) |
+| RAM usage | Bright green (121) |
+| Logged users | Orange (208) |
 
-## 📸 Theme Examples
-
-- **Clean Repository (Synced)**
-- **Dirty Repository (Behind Remote)**
-- **Long Path Shortened**
-- **Command Timing Display**
-
-## 🔧 Git Status Indicators
-
-| Symbol   | Meaning                                 |
-|----------|-----------------------------------------|
-| CLEAN    | No uncommitted changes                  |
-| DIRTY    | Uncommitted changes present             |
-| ✔ synced | Up to date with remote                  |
-| ⇡3 ahead | 3 commits ahead of remote               |
-| ⇣2 behind| 2 commits behind remote                 |
-| ⇣1 ⇡2    | Behind and ahead (diverged)             |
-| ⚠ no remote | No remote branch configured          |
-| ⚡       | Remote info may be outdated (>2min)      |
-
-## ⚙️ Configuration
-
-The theme works out of the box, but you can customize colors by editing the theme file:
+To change them, edit the colour variables at the top of `precmd_mtsh()`:
 
 ```sh
-nano ~/.oh-my-zsh/custom/themes/mtsh.zsh-theme
+local C_BLUE='%F{117}'
+local C_MAGENTA='%F{213}'
 ```
 
-Modify color variables at the top of `precmd_mtsh()` function:
-```sh
-local C_BLUE='%F{117}'      # Change to your preferred blue
-local C_MAGENTA='%F{213}'   # Change to your preferred magenta
-# ... etc
-```
+## Contributing
 
-## 🤝 Contributing
+Patches are welcome. For anything larger than a fix, open an issue first and
+say what you intend to change — it is cheaper to disagree about a plan than
+about a branch.
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+## Licence
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+GNU General Public License v3.0. See the `LICENSE` file in the repository.
 
-## 📝 License
+## Author
 
-This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
+Mateusz Okulanis — [FPGArtktic@outlook.com](mailto:FPGArtktic@outlook.com).
+Source: [ohmyzsh-mtsh-theme](https://github.com/FPGArtktic/ohmyzsh-mtsh-theme).
 
-## 👨‍💻 Author
-Mateusz Okulanis - FPGArtktic@outlook.com
-
-Website
-
-## 🙏 Acknowledgments
-- Inspired by various Zsh themes in the community
-- Built for developers who love detailed, informative prompts
-- Optimized for modern terminal emulators with 256-color support
-- I use arch btw
-
-## License
-MTSH theme is released under the GNU GPL v3.0 license.
-
-For more details, visit the [MTSH theme GitHub repository](https://github.com/FPGArtktic/ohmyzsh-mtsh-theme).
-
+Developed on Arch Linux. I use arch btw.

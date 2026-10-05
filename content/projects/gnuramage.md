@@ -3,36 +3,49 @@ title: "GnuRAMage - The GNU RAM Disk Synchronization Tool"
 date: 2025-06-02
 ---
 
-GnuRAMage is a powerful Bash-based tool for synchronizing files between a high-speed RAM disk and traditional hard drives. It was created to help users manage large, multi-terabyte RAM disks, ensuring both performance and data safety.
+GnuRAMage keeps a RAM disk and a hard disk in step. It is written in Bash and
+aimed at RAM disks large enough to hold a working set — multi-terabyte ones —
+where losing the contents to a crash or a power cut is a real cost rather than
+a theoretical one.
 
-## Key Features
-- **Automatic File Copying:** Seamlessly copies files from hard disk to RAM disk for fast access.
-- **Periodic Synchronization:** Regularly syncs changes from RAM disk back to persistent storage, protecting against data loss from power outages or crashes.
-- **Exclusion Patterns:** Easily exclude files or directories from synchronization using flexible patterns.
-- **INI Configuration:** Simple, human-readable configuration file for easy setup and customization.
-- **Comprehensive Logging:** Multiple log levels, error-only logs, and detailed output for troubleshooting and monitoring.
-- **Dry Run Mode:** Simulate operations without making changes, perfect for testing configurations.
-- **One-time Mode:** Run a single synchronization cycle when needed.
-- **Checksum Verification:** Optional integrity checks to ensure data consistency.
-- **Script Generation:** Automatically creates standalone scripts for automation and integration with cron jobs.
-- **Graceful Shutdown:** Handles interruptions and ensures a final sync before exit.
+## What it does
 
-## Why Use GnuRAMage?
-If you use a RAM disk to accelerate access to frequently used files, GnuRAMage ensures your data is always synchronized and safe. It protects your investment in high-speed memory by preventing data loss and automating tedious sync tasks. The tool is free, extensible, well-documented, and standards-compliant.
+- Copies files from disk to the RAM disk on start.
+- Syncs changes back to persistent storage on an interval, so a crash costs at
+  most one interval.
+- Excludes files and directories by pattern.
+- Reads an INI configuration file.
+- Logs at several levels, with an error-only log for unattended runs.
+- Has a dry-run mode that reports what it would do and changes nothing.
+- Has a one-shot mode for a single cycle.
+- Verifies with checksums, optionally.
+- Generates standalone scripts for cron and other schedulers.
+- Syncs once more on SIGINT and SIGTERM before exiting.
+
+## Why
+
+A RAM disk is fast and volatile. Keeping it in step with disk by hand is both
+tedious and the kind of task that is skipped exactly when it matters. This
+automates it, and the dry-run and checksum modes exist so the automation can
+be checked rather than trusted.
 
 ## Requirements
-- Bash 4.0+
+
+- Bash 4.0 or newer
 - rsync
 - GNU/Linux
-- Sufficient RAM (ideally in terabytes)
+- Enough RAM to make the exercise worthwhile
 
-## Example Usage
-- Start with default settings: `./gramage.sh`
-- Run in dry-run mode: `./gramage.sh --dry-run --verbose`
-- Use a custom config: `./gramage.sh --config mysetup.ini`
-- Generate automation scripts: `./gramage.sh --script-gen-only`
+## Usage
 
-## License
-GnuRAMage is released under the GNU GPL v3.0 license.
+```sh
+./gramage.sh                            # default configuration
+./gramage.sh --dry-run --verbose        # report, change nothing
+./gramage.sh --config mysetup.ini       # custom configuration
+./gramage.sh --script-gen-only          # emit automation scripts and exit
+```
 
-For more details, visit the [GnuRAMage GitHub repository](https://github.com/FPGArtktic/GnuRAMage).
+## Licence
+
+GNU GPL v3.0. Source:
+[GnuRAMage](https://github.com/FPGArtktic/GnuRAMage).

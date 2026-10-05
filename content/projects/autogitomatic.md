@@ -3,30 +3,36 @@ title: "AutoGit-o-Matic"
 date: 2025-06-02
 ---
 
-AutoGit-o-Matic is a Bash script designed to automate Git operations across multiple repositories. It is especially useful for developers who work on several projects or use multiple computers, ensuring all repositories stay up to date with minimal effort.
+AutoGit-o-Matic runs git operations across many repositories at once. It is a
+Bash script, and it exists because the same work living on several machines
+means several repositories drifting out of date in different directions.
 
-## Key Features
-- **Batch Git Operations:** Pull or fetch updates from multiple repositories with a single command.
-- **Automatic Repository Discovery:** Scans directories to find all Git repositories automatically.
-- **Flexible Configuration:** Uses a simple INI file to specify which repositories to manage and how to log operations.
-- **Logging:** Supports both TXT and JSON log formats for easy tracking and auditing.
-- **Dry-Run Mode:** Simulate operations without making any changes, perfect for testing.
-- **Verbose Output:** Get detailed information about each operation for troubleshooting.
-- **Cron Integration:** Easily set up scheduled syncs using cron jobs for full automation.
+## What it does
 
-## Example Usage
-- Run with default config: `./autogit-o-matic.sh`
-- Simulate actions: `./autogit-o-matic.sh --dry-run --verbose`
-- Use a custom config: `./autogit-o-matic.sh --config myconfig.ini`
-- Log to a file: `./autogit-o-matic.sh --log-file autogit.log`
+- Pulls or fetches across a set of repositories in one command.
+- Finds repositories by scanning directories, rather than requiring a list.
+- Reads an INI file for which repositories to manage and how to log.
+- Writes logs as plain text or JSON.
+- Has a dry-run mode that reports what it would do and changes nothing.
+- Has a verbose mode that reports each operation.
+- Runs unattended from cron.
 
-## Cron Example
-To run every hour:
+## Usage
+
+```sh
+./autogit-o-matic.sh                             # default configuration
+./autogit-o-matic.sh --dry-run --verbose         # report, change nothing
+./autogit-o-matic.sh --config myconfig.ini       # custom configuration
+./autogit-o-matic.sh --log-file autogit.log      # log to a file
+```
+
+Hourly, from cron:
+
 ```
 0 * * * * /path/to/autogit-o-matic.sh --log-file /path/to/autogit.log
 ```
 
-## License
-AutoGit-o-Matic is released under the GNU GPL v3.0 license.
+## Licence
 
-For more details, visit the [AutoGit-o-Matic GitHub repository](https://github.com/FPGArtktic/AutoGit-o-Matic).
+GNU GPL v3.0. Source:
+[AutoGit-o-Matic](https://github.com/FPGArtktic/AutoGit-o-Matic).

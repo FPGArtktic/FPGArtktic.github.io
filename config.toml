@@ -28,7 +28,7 @@ enableRobotsTXT = true
   palette = "nice-city"            # day: nice-city | c64 | paper
                                    # night: nice-night | oled | scene | green | amber
   paletteSwitcher = true
-  paletteAuto = true               # follow the reader's OS
+  paletteAuto = false              # nice-city always; the switcher still offers the rest
   paletteDark = "nice-night"
   paletteLight = "nice-city"
   columns = 80                     # 80 | 40

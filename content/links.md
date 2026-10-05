@@ -4,7 +4,10 @@ date = "2025-06-02"
 author = "Mateusz Okulanis"
 +++
 
-Here, I'm curating a collection of groovy books, mind-bending articles, awesome websites, and brain-expanding educational materials. Most of this gold is in English, because, let's face it, that's where a lot of the really good, nitty-gritty stuff lives. Consider this your personal invitation to dive in, explore, and perhaps even find your next obsession. No fancy bells or whistles, just pure, unadulterated knowledge. Let's make some digital magic happen!
+Books, articles, sites and course material I have found worth the time. Mostly
+in English, because that is where most of the detailed material is. No
+particular order and no completeness claimed — this is a reading list, not a
+curriculum.
 
 {{< hr >}}
 ## Books

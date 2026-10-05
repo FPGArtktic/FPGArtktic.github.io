@@ -1,5 +1,5 @@
 +++
-title = "Hello World! Welcome to FPGArtktic's Website"
+title = "Hello world"
 date = "2025-06-01T19:30:15+02:00"
 author = "Mateusz Okulanis"
 authorTwitter = ""
@@ -11,4 +11,7 @@ showFullContent = false
 readingTime = true
 hideComments = false
 +++
-Today, I'm excited to announce the launch of my personal website! This site will serve as a hub for my projects, tutorials, and thoughts on FPGA programming, embedded systems, and low-level development. Stay tuned for more content coming soon!
+This site is up. It collects my projects and whatever notes on FPGA work,
+embedded systems and low-level development turn out to be worth writing down.
+
+No schedule, and no promises about one.
