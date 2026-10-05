@@ -9,7 +9,7 @@ A beautiful and feature-rich Zsh theme that provides comprehensive system and Gi
 ## ✨ Features
 
 ### 📊 System Information
-- **Date & Time:** Current date and time display
+- **Date and time:** Current date and time display
 - **IP Address:** Your current IPv4 address
 - **CPU Usage:** Real-time processor utilization percentage
 - **RAM Usage:** Memory consumption (used/total)

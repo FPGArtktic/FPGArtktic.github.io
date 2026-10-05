@@ -10,7 +10,7 @@ Hey everyone! I'm Mateusz, hailing from the beautiful country, Poland. My profes
 
 ## Contact
 
-I am currently open to new job offers and collaborations. Feel free to reach out via [<<< GitHub >>>](https://github.com/FPGArtktic) or email at [FPGArtktic@outlook.com](FPGArtktic@outlook.com).
+I am currently open to new job offers and collaborations. Feel free to reach out via [<<< GitHub >>>](https://github.com/FPGArtktic) or email at [FPGArtktic@outlook.com](mailto:FPGArtktic@outlook.com).
 
 ## Personal Interests
 

@@ -1,53 +1,71 @@
-This page uses third-party software/technologies/works/fonts:
++++
+title = "Licensing"
+date = "2025-06-01"
+author = "Mateusz Okulanis"
++++
 
-***
-***
-***
-***
+This page lists the third-party software, fonts and works this site uses.
 
-<div style="margin-left: 40px;">
-*   Font: c64-truetype-v1.2.1 
+{{< hr >}}
 
-Download: https://style64.org/release/c64-truetype-v1.2.1-style
+## Theme
 
-License: (idk but there is text of license)
+**hugo-theme-c64-boot** — written by me, from scratch, for this site.
 
-Fonts in this package are (c) 2010-2019 Style.
+* Licence: MIT
+* Source: https://github.com/FPGArtktic/hugo-theme-c64-boot
+* Demo: https://fpgartktic.github.io/hugo-theme-c64-boot/
 
-This license is applicable to each font file included in this package in all their variants (ttf, otf, eot, woff, woff2, svg).
+{{< hr >}}
 
-You MAY NOT: sell this font; include/redistribute the font in any font collection regardless of pricing; provide the font for direct download from any web site, modify or rename the font. You MAY: link to "http://style64.org/c64-truetype" in order for others to download and install the font; embed the font (without any modification or file renaming) for display on any web site using @font-face rules; use this font in static images and vector art; include this font (without any modification or file renaming) as part of a software package but ONLY if said software package is freely provided to end users. You may also contact us to negotiate a (possibly commercial) license for your use outside of these guidelines at "http://style64.org/contact-style".
+## Fonts
 
-At all times the most recent version of this license can be found at "http://style64.org/c64-truetype/license".
+The fonts are **not** covered by the theme's MIT licence. All three are under
+the SIL Open Font License 1.1, and all three are served from this site rather
+than from anyone else's.
 
-</div>
+* **Press Start 2P** — body and interface. Copyright 2012 The Press Start 2P
+  Project Authors, with Reserved Font Name "Press Start 2P". Shipped as a
+  WOFF2 repackaged from the upstream TrueType file with no other change, and
+  never subset — subsetting counts as modification, and the Reserved Font Name
+  could then no longer be used.
+* **Sixtyfour** — the PETSCII shortcode only, for the block glyphs Press
+  Start 2P does not have. Copyright 2021 The Sixtyfour Project Authors.
+* **JetBrains Mono** — code blocks. Copyright 2020 The JetBrains Mono Project
+  Authors.
 
-***
-***
-***
-***
+Full licence text:
+https://github.com/FPGArtktic/hugo-theme-c64-boot/blob/main/LICENSE-FONT.txt
 
-<div style="margin-left: 40px;">
-*   Software: Hugo - static website generator.
+**C64 Pro by Style64 is not used on this site.** The theme can switch to it,
+but the font would have to be downloaded separately from
+[style64.org](https://style64.org/c64-truetype) and its licence would then
+apply here. It is not installed, so it does not.
 
-License: Apache 2.0
+{{< hr >}}
 
-Website: https://gohugo.io/
- </div>
+## Software
 
-***
-***
-***
-***
+**Hugo** — the static site generator this site is built with.
 
-<div style="margin-left: 40px;">
-*   Theme: Hugo terminal
+* Licence: Apache 2.0
+* Website: https://gohugo.io/
 
-Author: panr
-License: MIT
+{{< hr >}}
 
-Website: https://themes.gohugo.io/themes/hugo-theme-terminal/
+## Colours
 
-My fork: https://github.com/FPGArtktic/fiolet-hugo-theme-terminal
- </div>
+The C64 colour values come from the **Colodore** palette by Pepto / Colodore —
+[colodore.com](https://www.colodore.com/).
 
+{{< hr >}}
+
+## Trademarks
+
+"Commodore" and "Commodore 64" appear on this site as plain-text homage only.
+No Commodore logo, rainbow badge or C= glyph is used anywhere, and no
+third-party game names, logos or artwork appear either. **This site is not
+affiliated with, endorsed by or connected to Commodore or any of its
+successors.**
+
+{{< hr >}}

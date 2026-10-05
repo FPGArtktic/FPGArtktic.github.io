@@ -1,55 +1,106 @@
-theme = "terminal"
+theme = "hugo-theme-c64-boot"
 baseurl = "https://fpgartktic.github.io/"
-languageCode = "en-us"
+locale = "en-us"                    # "languageCode" until Hugo 0.158
+title = "FPGArktic"
+copyright = "Not affiliated with Commodore."
 pagination.pagerSize = 8
+enableRobotsTXT = true
 
-[markup.goldmark.renderer]
-  unsafe = true
+[markup]
+  [markup.goldmark.extensions.typographer]
+    # The link style on this site is [ <<< GitHub >>> ]. Goldmark's typographer
+    # turns << and >> into guillemets, which printed it as "«< GitHub »>".
+    # Everything else it does (em dashes, curly quotes) is kept.
+    leftAngleQuote = "&lt;&lt;"
+    rightAngleQuote = "&gt;&gt;"
+  [markup.goldmark.renderer]
+    unsafe = true          # licensing.md and showcase.md contain inline HTML
+  [markup.highlight]
+    noClasses = false      # Chroma classes follow the active palette
+    lineNos = false
+    tabWidth = 2
+
+[taxonomies]
+  tag = "tags"
 
 [params]
-  contentTypeName = "posts"
-  showMenuItems = 8
-  fullWidthTheme = true
-  centerTheme = false
-  customCSS = ["assets/css/custom.css"]
-# Główne menu dla motywu terminal
+  description = "FPGA, embedded systems, and the projects that come out of them."
+  palette = "nice-city"            # day: nice-city | c64 | paper
+                                   # night: nice-night | oled | scene | green | amber
+  paletteSwitcher = true
+  paletteAuto = true               # follow the reader's OS
+  paletteDark = "nice-night"
+  paletteLight = "nice-city"
+  columns = 80                     # 80 | 40
+  uppercaseChrome = true
+
+  [params.boot]
+    enabled = true
+    once = "session"               # session | always | never
+    program = "FPGARKTIC"          # the LOAD"...",8,1 filename, 16 characters
+
+  [params.dir]
+    diskName = "FPGARKTIC"         # the 16-character disk name in the header
+    diskId = "2A"
+    fakeFree = false               # real block counts, not a round number
+
+  [params.prompt]
+    enabled = true
+    hotkey = "`"
+
+  [params.crt]
+    mode = "off"                   # off | subtle | full
+
+  [params.fonts]
+    body = "pixel"                 # pixel (Press Start 2P) | mono
+    code = "mono"                  # mono | pixel
+    c64pro = false                 # true needs static/fonts/C64_Pro-STYLE.woff2
+                                   # and puts the Style64 licence on this site
+
+# The directory listing is the navigation. Names are 1541 filenames, so they
+# are cut at 16 characters: "INTERESTING LINKS" would print as
+# "INTERESTING LINK", which reads like a mistake rather than a constraint.
 [[menu.main]]
   identifier = "main"
   name = "MAIN"
   url = "/"
+  weight = 10
 [[menu.main]]
   identifier = "about"
   name = "ABOUT ME"
   url = "/about"
+  weight = 20
 [[menu.main]]
   identifier = "projects"
   name = "PROJECTS"
   url = "/projects"
+  weight = 30
+[[menu.main]]
+  identifier = "posts"
+  name = "POSTS"
+  url = "/posts"
+  weight = 40
+[[menu.main]]
+  identifier = "links"
+  name = "LINKS"
+  url = "/links"
+  weight = 50
 [[menu.main]]
   identifier = "licensing"
   name = "LICENSING"
   url = "/licensing"
-[[menu.main]]
-  identifier = "links"
-  name = "INTERESTING LINKS"
-  url = "/links"
+  weight = 60
 
+[[menu.footer]]
+  identifier = "licensing"
+  name = "LICENSING"
+  url = "/licensing/"
+  weight = 10
 
 [languages]
   [languages.en]
     title = "FPGArktic"
-    copyright = ""
-    
-    [languages.en.params]
-      subtitle = "FPGArktic"
-      keywords = ""
-      menuMore = "Show more"
-      readMore = "Read more"
-      readOtherPosts = "Read another posts"
-
-    [languages.en.params.logo]
-      logoText = "FPGArktic"
-      logoHomeLink = "/"
+    copyright = "Not affiliated with Commodore."
 
 [caches]
   [caches.images]

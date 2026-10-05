@@ -27,11 +27,20 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ## Images
 
-![Terminal Theme Preview](/img/terminal-theme.png)
+{{< petscii alt="A disk drive drawn in PETSCII block glyphs" >}}
+████████████████
+█▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+█▒████████████▒█
+█▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+████████████████
+{{< /petscii >}}
 
 ### Figure with a caption
 
-{{< figure src="/img/terminal-theme.png" alt="Terminal Theme Preview" position="center" caption="Terminal Theme Preview" captionPosition="center" >}}
+{{< petscii alt="A block cursor" >}}
+████
+████
+{{< /petscii >}}
 
 ## Blockquotes
 
