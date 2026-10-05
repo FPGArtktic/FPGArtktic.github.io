@@ -9,6 +9,20 @@ GPL-3.0, and all of it exists because I wanted it on my own machine first.
 
 {{< hr >}}
 
+## FPGA
+
+**WEFT** (WEFT Elaborates FPGA Toolchains) – an MCP server that gives an LLM
+client a structured interface to an Intel Quartus Prime 25.1 flow: lint and
+simulate in seconds, compile asynchronously, and read the results back as JSON
+instead of megabytes of log. Python, GPL-3.0, with its own CI, container build
+and documentation.
+
+[ <<< GitHub >>> ](https://github.com/FPGArtktic/weft-mcp)
+
+[ <<< DOCS >>> ](https://weft-mcp.readthedocs.io/en/main/)
+
+{{< hr >}}
+
 ## Terminal tools
 
 **hyprtilt** – a keyboard-first TUI and command line for arranging and
@@ -92,12 +106,25 @@ when the same work lives on several computers.
 
 {{< hr >}}
 
-**setup-DotFiles** – installs the packages, docker and dotfiles I want
-immediately after a fresh Debian or Ubuntu install.
+**setup-DotFiles** – sets up a fresh Arch Linux workstation, one question at
+a time: the packages, docker, the SSH key, the dotfiles. The `arch` branch
+installs with pacman and yay only; the Debian and Ubuntu versions live on
+their own branches and share no code path with it.
 
 [ <<< GitHub >>> ](https://github.com/FPGArtktic/setup-DotFiles)
 
 [ <<< READ MORE >>> ](/projects/setupdotfiles/)
+
+{{< hr >}}
+
+**podman-wrk** – builds a developer container on the machine that has a
+network, writes it to one file, and loads it on the machine that does not.
+Everything — plugins, parsers, language servers — is fetched at build time,
+and the build fails if any of it did not land, because finding out what is
+missing on an air-gapped host is finding out too late. One shell script, one
+Containerfile, no daemon and no registry. Public domain.
+
+[ <<< GitHub >>> ](https://github.com/FPGArtktic/podman_base)
 
 {{< hr >}}
 

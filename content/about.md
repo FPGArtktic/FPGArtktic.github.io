@@ -8,8 +8,19 @@ author = "Mateusz Okulanis"
 
 Mateusz Okulanis, from Poland. I work on embedded systems and low-level
 software: FPGA programming, kernel development, and building systems with
-Yocto and Buildroot. Day to day that also means Bash, Docker and Python, and I
-have worked in cybersecurity. I use arch, btw.
+Yocto and Buildroot. Day to day that also means Bash, Podman and Python, and I
+have worked in cybersecurity.
+
+A good deal of that work happens in **air-gapped environments**, where the
+machine that runs the code has no network and the machine that builds it does.
+That constraint decides the tooling: everything has to be fetched, verified
+and packaged on one side, then carried across and work on the other with
+nothing to fall back on. [podman-wrk](https://github.com/FPGArtktic/podman_base)
+is that approach written down — it builds a developer container where there is
+a network, ships it as a single file, and fails the build rather than letting
+you discover what is missing on the host that cannot install it.
+
+I use arch, btw.
 
 ## Contact
 
