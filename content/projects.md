@@ -97,8 +97,10 @@ bash: keeps a RAM disk in step with an HDD, with project exclusions.
 
 {{< hr >}}
 
-**AutoGit-o-Matic** – periodically pulls or fetches git repositories, for
-when the same work lives on several computers.
+**AutoGit-o-Matic** – a POSIX shell script that pulls or fetches across many
+git repositories at once, mirrors or bundles them for air-gapped transfer,
+and silently fast-forwards branches nobody has checked out. Runs unattended
+from cron or systemd, tested across four shells.
 
 [ <<< GitHub >>> ](https://github.com/FPGArtktic/AutoGit-o-Matic)
 
@@ -114,6 +116,21 @@ their own branches and share no code path with it.
 [ <<< GitHub >>> ](https://github.com/FPGArtktic/setup-DotFiles)
 
 [ <<< READ MORE >>> ](/projects/setupdotfiles/)
+
+{{< hr >}}
+
+**gpygap** – an offline PyPI mirror for air-gapped networks: the top 1000
+projects plus your own packages, every dependency and extra, for several
+Python versions and platforms. Builds missing wheels in a container while
+it still has a toolchain, verifies every package by installing it offline
+before shipping, and ships monthly deltas with checksums instead of a
+full copy each time.
+
+[ <<< GitHub >>> ](https://github.com/FPGArtktic/gpygap)
+
+[ <<< DOCS >>> ](https://gpygap.readthedocs.io/en/latest/)
+
+[ <<< READ MORE >>> ](/projects/gpygap/)
 
 {{< hr >}}
 
